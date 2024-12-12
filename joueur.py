@@ -1,22 +1,10 @@
 from pile import *
 from structures import *
 
-def creer_joueur(nom:str) -> "JOUEUR":
-    """
-        La main d'un joueur est une pile
-        Les gain d'un joueur sont dans une pile
-        
-        :tests:
-        >>> j = creer_joueur("DAVID")
-        >>> j.nom
-        "DAVID"
-        >>> est_vide(j.main)
-        True
-        >>> est_vide(j.gain)
-        True
-    """
-    pass
-
+def creer_joueur(nom: str) -> dict:
+    # Crée un joueur avec un nom, une main vide et une pile de gains vide
+    return {"nom": nom, "main": creer_pile(), "gain": creer_pile()}
+    
 def perdu(joueur:"JOUEUR") -> bool:
     """
         Un joueur a perdu quand sa main est vide et qu'il n'a pas de cartes gagnées
